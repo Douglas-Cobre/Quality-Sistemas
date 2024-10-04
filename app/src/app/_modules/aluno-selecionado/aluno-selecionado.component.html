@@ -1,0 +1,68 @@
+
+<!---->
+<!--Teste usando tabela do material-->
+<div class="tabela">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--nome-->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let alunoSelecionado"> {{alunoSelecionado.nome}} </td>
+    </ng-container>
+
+    <!--email-->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> E-mail </th>
+      <td mat-cell *matCellDef="let alunoSelecionado"> {{alunoSelecionado.email}} </td>
+    </ng-container>
+
+    <!--Telefone-->
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef> Telefone </th>
+      <td mat-cell *matCellDef="let alunoSelecionado"> {{alunoSelecionado.telefone | telefone}} </td>
+    </ng-container>
+
+    <!--Celular-->
+    <ng-container matColumnDef="celular">
+      <th mat-header-cell *matHeaderCellDef> Celular </th>
+      <td mat-cell *matCellDef="let alunoSelecionado"> {{alunoSelecionado.celular | telefone}} </td>
+    </ng-container>
+
+    <!--data de nascimento-->
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef> Data de nascimento </th>
+      <td mat-cell *matCellDef="let alunoSelecionado"> {{alunoSelecionado.data | data}} </td>
+    </ng-container>
+
+    <!--cpf-->
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef> Cpf </th>
+      <td mat-cell *matCellDef="let alunoSelecionado"> {{alunoSelecionado.cpf | cpf}} </td>
+    </ng-container>
+
+    <!--btn-->
+    <ng-container matColumnDef="editar/apagar">
+      <th mat-header-cell *matHeaderCellDef> Apagar/Editar </th>
+
+      <td mat-cell *matCellDef="let alunoSelecionado">
+        <a [routerLink]="['']">
+          <button style="background-color: rgb(164, 79, 79);" (click)="apagar(alunoSelecionado)">
+            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+          </button>
+        </a>
+
+        <a [routerLink]="['/edit']" (click)="retornarDados(alunoSelecionado)">
+          <button style="background-color: cadetblue; margin-left: 2px;">
+            <mat-icon aria-hidden="false" fontIcon="edit"></mat-icon>
+          </button>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+
+

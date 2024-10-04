@@ -1,0 +1,73 @@
+<section>
+  <fieldset>
+    <legend>Novo aluno</legend>
+    <form [formGroup]="formulario">
+      <!--Nome-->
+      <mat-form-field class="caixa-obr">
+        <mat-label>Nome</mat-label>
+        <input
+          id="nome"
+          matInput
+          formControlName="nome">
+      </mat-form-field>
+      <!--Emial-->
+      <mat-form-field class="caixa-obr">
+        <mat-label>E-mail</mat-label>
+        <input
+          id="email"
+          matInput
+          formControlName="email">
+      </mat-form-field>
+      <!--Telefone-->
+      <mat-form-field class="caixa">
+        <mat-label>Telefone</mat-label>
+        <input
+          id="telefone"
+          matInput
+          formControlName="telefone">
+      </mat-form-field>
+      <!--Celular-->
+      <mat-form-field class="caixa">
+        <mat-label>Celular</mat-label>
+        <input
+          id="celular"
+          matInput
+          formControlName="celular">
+      </mat-form-field>
+      <!--Cpf-->
+      <mat-form-field class="caixa">
+        <mat-label>CPF</mat-label>
+        <input
+          id="cpf"
+          matInput
+          formControlName="cpf">
+      </mat-form-field>
+      <!--Data de nascimento-->
+      <mat-form-field class="caixa">
+        <mat-label>Data de nascimento</mat-label>
+        <input
+          id="data"
+          matInput [matDatepicker]="picker"
+          formControlName="data">
+        <mat-hint>MM/DD/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!--Btn-->
+      <div class="botoes">
+        <button class="del" (click)="del()">
+          Cancelar <mat-icon aria-hidden="false" fontIcon="close"></mat-icon>
+        </button>
+        <button class="add" [disabled]="!this.formulario.valid" (click)="add()">
+          Adicionar <mat-icon class="icon" aria-hidden="false" fontIcon="add"></mat-icon>
+        </button>
+      </div>
+    </form>
+  </fieldset>
+</section>
+
+
+
+<!--Lista de alunos-->
+<app-lista></app-lista>

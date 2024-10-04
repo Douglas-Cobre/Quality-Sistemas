@@ -1,0 +1,34 @@
+section{
+  width: 95%;
+  margin: auto;
+  border-radius: 5%;
+  border-style: solid black;
+}
+
+fieldset{
+  margin: 6px;
+}
+
+.caixa{
+  margin: 4px;
+}
+.caixa-obr{
+  margin: 4px;
+  width: 48%;
+}
+.botoes{
+  margin: 2px;
+  position: relative;
+  float: right;
+}
+.btn-editar{
+  background-color:rgb(120, 158, 120);
+}
+.btn-cancelar{
+  background-color: rgb(164, 79, 79);
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.btn-voltar{
+  background-color: cadetblue;
+}
